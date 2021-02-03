@@ -3,7 +3,7 @@ import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart, Checkout } from './components';
-import { commerce } from './lib/commerce.js';
+import { commerce } from './commerce.js';
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);

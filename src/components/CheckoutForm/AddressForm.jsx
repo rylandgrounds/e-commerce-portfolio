@@ -3,7 +3,7 @@ import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@materia
 import { useForm, FormProvider } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-import { commerce } from '../../lib/commerce';
+import { commerce } from '../../commerce';
 import FormInput from './CustomTextField';
 
 const AddressForm = ({ checkoutToken, test }) => {
