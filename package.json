@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "v15.6.0"
+    "node": ">= 15.6.0"
   },
   "dependencies": {
     "@chec/commerce.js": "^2.3.0-beta1",
