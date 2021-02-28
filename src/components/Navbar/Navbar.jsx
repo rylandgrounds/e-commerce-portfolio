@@ -3,7 +3,7 @@ import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '
 import { ShoppingCart } from '@material-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 
-import logo from '../../assets/commerce.png';
+import logo from '../../assets/logo.png';
 import useStyles from './styles';
 
 const PrimarySearchAppBar = ({ totalItems }) => {
