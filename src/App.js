@@ -3,6 +3,7 @@ import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Navbar, Products, Cart, Checkout } from "./components";
+import AboutUs from "./components/AboutUs/AboutUs";
 import { commerce } from "./commerce.js";
 import { AuthProvider } from "./contexts/AuthContext";
 import Signup from "./components/Auth/Signup";
@@ -90,35 +91,36 @@ const App = () => {
             handleDrawerToggle={handleDrawerToggle}
           />
           <Switch>
-            <PrivateRoute
+            <Route
               exact
               path="/"
               component={Products}
               products={products}
               onAddToCart={handleAddToCart}
               handleUpdateCartQty={handleUpdateCartQty}
-            ></PrivateRoute>
+            />
             <PrivateRoute exact path="/user" component={Dashboard} />
-            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <PrivateRoute exact path="/profile" component={UpdateProfile} />
+            <Route path="/about-us" component={AboutUs} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
-            <PrivateRoute exact path="/cart">
+            <Route exact path="/cart">
               <Cart
                 cart={cart}
                 onUpdateCartQty={handleUpdateCartQty}
                 onRemoveFromCart={handleRemoveFromCart}
                 onEmptyCart={handleEmptyCart}
               />
-            </PrivateRoute>
-            <PrivateRoute path="/checkout" exact>
-              <Checkout
-                cart={cart}
-                order={order}
-                onCaptureCheckout={handleCaptureCheckout}
-                error={errorMessage}
-              />
-            </PrivateRoute>
+            </Route>
+            <PrivateRoute
+              exact
+              path="/checkout"
+              component={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}
+            />
           </Switch>
         </div>
       </AuthProvider>
