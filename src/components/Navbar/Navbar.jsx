@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, Button} from '@material-ui/core';
 import {Alert} from "@material-ui/lab"
 import { ShoppingCart } from '@material-ui/icons';
 import { Link, useLocation, useHistory} from 'react-router-dom';
@@ -48,28 +48,29 @@ const PrimarySearchAppBar = ({ totalItems}) => {
 
   return (
     <>
+  
       <AppBar position="fixed" className={classes.appBar} color="inherit">
       {error && <Alert variant="danger">{error}</Alert>}
         <Toolbar>
           <Typography component={Link} to="/" variant="h6" className={classes.title} color="primary">
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
           </Typography>
-          <Button component={Link} to="/about-us" aria-label="About Us" variant="outlined" color="primary">
+          <Button className={classes.button} component={Link} to="/about-us" aria-label="About Us" variant="outlined" color="primary">
             About Us
             </Button>
-            <Button component={Link} to="/update-profile" aria-label="Update Profile" variant="outlined" color="primary">
+            <Button className={classes.button} component={Link} to="/update-profile" aria-label="Update Profile" variant="outlined" color="primary">
             Update Profile
             </Button>
-            <Button component={Link} to="/logout" aria-label="Logout" variant="outlined" color="primary" onClick={handleLogout}>
+            <Button className={classes.button} component={Link} to="/logout" aria-label="Logout" variant="outlined" color="primary" onClick={handleLogout}>
             Logout
             </Button>
-            <Button component={Link} to="/books" aria-label="Books" variant="outlined" color="primary">
+            <Button className={classes.button} component={Link} to="/books" aria-label="Books" variant="outlined" color="primary">
               Books
             </Button>
-            <Button component={Link} to="/Games" aria-label="Games" variant="outlined" color="primary">
+            <Button className={classes.button} component={Link} to="/Games" aria-label="Games" variant="outlined" color="primary">
               Games
             </Button>
-            <Button component={Link} to="/must-haves" aria-label="Must Haves" variant="outlined" color="primary">
+            <Button className={classes.button} component={Link} to="/must-haves" aria-label="Must Haves" variant="outlined" color="primary">
             Must Haves
             </Button>
           <div className={classes.grow} />

@@ -91,14 +91,9 @@ const App = () => {
             handleDrawerToggle={handleDrawerToggle}
           />
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={Products}
-              products={products}
-              onAddToCart={handleAddToCart}
-              handleUpdateCartQty={handleUpdateCartQty}
-            />
+          <Route exact path="/">
+            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+          </Route>
             <PrivateRoute exact path="/user" component={Dashboard} />
             <PrivateRoute exact path="/profile" component={UpdateProfile} />
             <Route path="/about-us" component={AboutUs} />
