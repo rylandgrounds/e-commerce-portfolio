@@ -4,7 +4,7 @@ import {Alert} from "@material-ui/lab"
 import { ShoppingCart } from '@material-ui/icons';
 import { Link, useLocation, useHistory} from 'react-router-dom';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.jpg';
 import useStyles from './styles';
 import { useAuth } from "../../contexts/AuthContext.js";
 
