@@ -58,23 +58,22 @@ const PrimarySearchAppBar = ({ totalItems}) => {
           <Button className={classes.button} component={Link} to="/about-us" aria-label="About Us" variant="outlined" color="primary">
             About Us
             </Button>
-            <Button className={classes.button} component={Link} to="/update-profile" aria-label="Update Profile" variant="outlined" color="primary">
+            {/* <Button className={classes.button} component={Link} to="/update-profile" aria-label="Update Profile" variant="outlined" color="primary">
             Update Profile
             </Button>
             <Button className={classes.button} component={Link} to="/logout" aria-label="Logout" variant="outlined" color="primary" onClick={handleLogout}>
             Logout
-            </Button>
+            </Button> */}
             <Button className={classes.button} component={Link} to="/books" aria-label="Books" variant="outlined" color="primary">
               Books
             </Button>
-            <Button className={classes.button} component={Link} to="/Games" aria-label="Games" variant="outlined" color="primary">
+            <Button className={classes.button} component={Link} to="/games" aria-label="Games" variant="outlined" color="primary">
               Games
             </Button>
             <Button className={classes.button} component={Link} to="/must-haves" aria-label="Must Haves" variant="outlined" color="primary">
             Must Haves
             </Button>
           <div className={classes.grow} />
-          {location.pathname === '/' && (
           <div className={classes.button}>
             <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
               <Badge badgeContent={totalItems} color="secondary">
@@ -82,7 +81,6 @@ const PrimarySearchAppBar = ({ totalItems}) => {
               </Badge>
             </IconButton>
           </div>
-          )}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
