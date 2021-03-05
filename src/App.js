@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Navbar, Products, Cart, Checkout } from "./components";
+import { Navbar, Products, Cart, Checkout, Books, Games, MustHaves } from "./components";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { commerce } from "./commerce.js";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -92,7 +92,16 @@ const App = () => {
           />
           <Switch>
           <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty={handleUpdateCartQty} />
+          </Route>
+          <Route exact path="/books">
+            <Books products={products} onAddToCart={handleAddToCart} handleUpdateCartQty={handleUpdateCartQty} />
+          </Route>
+          <Route exact path="/games">
+            <Games products={products} onAddToCart={handleAddToCart} handleUpdateCartQty={handleUpdateCartQty} />
+          </Route>
+          <Route exact path="/must-haves">
+            <MustHaves products={products} onAddToCart={handleAddToCart} handleUpdateCartQty={handleUpdateCartQty} />
           </Route>
             <PrivateRoute exact path="/user" component={Dashboard} />
             <PrivateRoute exact path="/profile" component={UpdateProfile} />
@@ -108,14 +117,9 @@ const App = () => {
                 onEmptyCart={handleEmptyCart}
               />
             </Route>
-            <PrivateRoute
-              exact
-              path="/checkout"
-              component={cart}
-              order={order}
-              onCaptureCheckout={handleCaptureCheckout}
-              error={errorMessage}
-            />
+            <Route exact path="/checkout" >
+            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
+          </Route>
           </Switch>
         </div>
       </AuthProvider>
